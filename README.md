@@ -4,6 +4,19 @@ Calibration of LiDAR-Sensors - PointCloud Alignment/Registration tools with PCL 
 <br/><br/>
 The tools are based on different versions of the ICP approach for point cloud alignment.
 
+**Here is a demo on modeled data from an instance of [Zaytuna model vehicles](https://github.com/ChevronOne/zaytuna) rendered with its primitives:**  
+<p align="center">
+    <img width="800" align="center" src="alignment_demo" alt="Calligraphy" />
+</p>
+<br/><br/>
+
+**Another demo on actual sensors data between a scan of [Velodyne HDL − 64E](https://velodynelidar.com/blog/hdl-64e-lidar-sensor-retires/) and a scan of [Velodyne VLP−16](https://velodynelidar.com/products/puck/), which are placed and oriented differently on the top of a vehicle parked at the side of the road:**
+
+https://user-images.githubusercontent.com/38502426/130454873-7eeb1fe4-c0bb-446d-b279-be162f8ef6ee.mp4
+
+<br/><br/>
+As can be seen the alignment process performs pretty well on modeled data, where a perfect matching actually exists. However, this is not always the case when the data are from real LiDAR-sensors, as they are usually very noisy and contain a lot of outliers. Therefore to reduce their effect on the alignment process, the parameters that must be given when running each tool, should be chosen carefully.
+
 Each tool expects the outputs of source and the target LiDAR-sensors to be published to two different topics, each with a [sensor_msgs::PointCloud2](http://docs.ros.org/en/api/sensor_msgs/html/msg/PointCloud2.html) message.
 
 ## Dependencies:
@@ -52,14 +65,5 @@ And the user can interact with each visualizer with following mouse and keyboard
 + `ctl`+`left-click` On Mouse: Hovering the mouse with `left-button` clicked and `Ctrl` button is pushed down, will rotate the camera about the vertical axes.
 + `right-click` On Mouse: Hovering the mouse with `right-button` clicked, will move the camera along the vertical axes (Zoom-in & Zoom-out).
 + `middle-click` On Mouse: Hovering the mouse with `middle-button` clicked, will move the camera along the both horizontal axis.
-
-<br/><br/>
-
-**Here is a demo on an instance of [Zaytuna model vehicles](https://github.com/ChevronOne/zaytuna) rendered with its primitives:**  
-<p align="center">
-    <img width="800" align="center" src="alignment_demo" alt="Calligraphy" />
-</p>
-
-As can be seen the alignment process performs pretty well on modeled data, where a perfect matching actually exists. However, this is not always the case when the data are from real LiDAR-sensors, as they are usually very noisy and contain a lot of outliers. Therefore to reduce their effect on the alignment process, the parameters that must be given when running each tool, should be chosen carefully.
 
 <br/><br/>
